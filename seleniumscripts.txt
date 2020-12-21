@@ -1,0 +1,83 @@
+1)Script for login page via  both username/ password & email/password:
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.FirefoxDriver;
+public class Login Script{
+public static void main(String[] ars) throws InterruptedException{
+System.setProperty("webdriver.gecko.driver","./softwares/geckodriver.exe");
+WebDriver  driver = new FirefoxDriver();
+driver .get("https://gitlab.com/users/sign_in");
+driver.findElement(By.id("user_login")).sendkeys("spandy021987"));
+Thread.sleep(2000);
+driver.findElement(By.xpath("//input[@type='password']")).sendkeys("Bangalore98765");
+Thread.sleep(2000);
+driver.findElement(By.xpath("//input[@type='submit']")).click();
+Thread.sleep(2000);
+String title=driver.getTitle();
+System.out.println(title);
+if(title.equals("gitlab")
+{
+System.out.println("Home page is dislplayed");
+}
+else
+{
+System.out.println("Home page is not displayed");
+
+}
+}
+}
+
+2)Script  for the register page by filling all the fields and  clicking on the register button.
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.FirefoxDriver;
+public class RegisterScript{
+public static void main(String[] ars) throws InterruptedException{
+System.setProperty("webdriver.gecko.driver","./softwares/geckodriver.exe");
+WebDriver  driver = new FirefoxDriver();
+driver .get("https://gitlab.com/users/sign_in#register-pane");
+driver.findElement(By.xpath("//a[.='Register now']").click();
+Thread.sleep(2000);
+driver.findElement(By.id("new_user_first_name")).sendkeys("Spandana");
+Thread.sleep(2000);
+driver.findElement(By.id("new_user_last_name")).sendkeys("Udupi");
+Thread.sleep(2000);
+driver.findElement(By.xpath("(//input[@type='text'])[4]")).sendkeys("spandy021987");
+Thread.sleep(2000);
+driver.findElement(By.xpath("//input[@type='email']")).sendkeys("spandy021987@gmail.com");
+Thread.sleep(2000);
+driver.findElement(By.xpath("//input[@type='password']")).sendkeys("Bangalore98765");
+Thread.sleep(2000);
+driver.findElement(By.xpath("//input[@type='submit']")).click();
+Thread.sleep(2000);
+}
+}
+
+
+3)Script  to  click on the New Project button in the top-right side, to open the New Project page. Automate the creation of new project and check for any vulnerabilities like by passing special characters etc in Project Slug field.
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.FirefoxDriver;
+public class RegisterScript{
+public static void main(String[] ars) throws InterruptedException{
+System.setProperty("webdriver.gecko.driver","./softwares/geckodriver.exe");
+WebDriver  driver = new FirefoxDriver();
+driver .get("https://gitlab.com/projects/new");
+driver.findElement(By.xpath("//li[@class='header-new dropdown show']")).click();
+Thread.sleep(2000);
+driver.findElement(By.xpath("//a[@href='/projects/new']")).click();
+Thread.sleep(2000);
+driver.findElement(By.xpath("//a[@href='#blank_project']")).click();
+Thread.sleep(2000);
+driver.findElement(By.xpath("//input[@name='project[path]']")).sendkeys("Project1");
+Thread.sleep(2000);
+driver.close();
+}}
+
+
+
+
+
+
+
+  
